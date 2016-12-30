@@ -1,0 +1,30 @@
+<!--
+  Copyright (c) 2015 Meizu bigertech, All rights reserved.
+  @author 苏理煌
+  @date  09/12/15
+  @description
+-->
+
+<section class="content-header clearfix">
+  <h3> 新增管理员 </h3>
+</section>
+
+<div class="form-group">
+  <div class="form-group">
+    <label for="username">用户名</label>
+    <input type="text" ng-model="newAdmin.username" class="form-control" id="username">
+  </div>
+  <div class="form-group">
+    <label for="password">密码(大于8位,小于16位)</label>
+    <input type="password" ng-model="newAdmin.password" class="form-control" id="password">
+  </div>
+
+  <div class="form-group">
+    <label for="confirmPassword">确认密码</label>
+    <input type="password" ng-model="newAdmin.confirmPassword" class="form-control" id="confirmPassword">
+  </div>
+
+  <div class="operation">
+    <button class="btn btn-success" ng-click="create()">创建用户</button>
+  </div>
+</div>

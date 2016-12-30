@@ -1,0 +1,65 @@
+<!--
+  Copyright (c) 2015 Meizu bigertech, All rights reserved.
+  @author 苏理煌
+  @date  09/12/15
+  @description
+-->
+
+<section class="content-header clearfix">
+  <h3> 全部文章 </h3>
+</section>
+
+<section class="content">
+
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" id="title" ng-model="query.title" ng-change="search()"
+             placeholder="文章标题">
+      <select class="form-control" ng-model="query.category" ng-change="search()">
+        <option value="">请选择类别</option>
+        <option value="product">产品</option>
+        <option value="post">文章</option>
+        <option value="topic">专题</option>
+      </select>
+    </div>
+
+  </form>
+  <div class="table-respon">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th style="min-width: 50px">操作</th>
+        <th style="min-width:45px">序号</th>
+        <th style="min-width:75px">标题</th>
+        <th style="min-width:75px">总评论数</th>
+        <th style="min-width:75px">总参与数</th>
+        <th style="min-width:75px">源ID</th>
+        <th style="min-width: 80px">链接地址</th>
+        <td style="min-width:120px">类别</td>
+        <th style="min-width: 80px">来源站点</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="thread in threads">
+        <td>
+          <div>
+            <a href="#/{{siteName}}/thread/{{thread.uuid}}/comments" class="btn btn-primary btn-sm">查看评论</a>
+          </div>
+
+        </td>
+        <td>{{$index+1}}</td>
+        <td>{{thread.title}}</td>
+        <td>{{thread.cmtCount}}</td>
+        <td>{{thread.partsCount}}</td>
+        <td>{{thread.sourceID}}</td>
+        <td><a ng-href="{{thread.url}}">{{thread.url}}</a></td>
+        <td>{{thread.category}}</td>
+        <td>{{thread.site.sitename}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" items-per-page="items_per_page"
+              boundary-links="true" rotate="false" ng-change="pageChanged()" class="pull-right"></pagination>
+</section>

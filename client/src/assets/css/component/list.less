@@ -1,0 +1,138 @@
+
+
+.mws-main {
+  .mws-avatar-wrap {
+    display: inline-block;
+    width: @avatar-size;
+    float: left;
+    padding-top: @cmt-padding-top;
+  }
+
+  .mws-cmt-list {
+    .no-comment {
+      display: none;
+    }
+  }
+
+  .mws-cmt-right {
+    padding-top: @cmt-padding-top;
+  }
+
+  .mws-cmt-item {
+    border-top: 1px solid @cmt-border;
+    &:last-child {
+      border-bottom: 1px solid @cmt-border;
+    }
+  }
+
+  .mws-cmt-main {
+    padding-top: @cmt-padding-top;
+    margin-bottom: @cmt-margin-bottom;
+    .mws-cmt-username {
+      padding-top: 8px;
+      padding-bottom: 6px;
+      color: @cmt-username-color;
+      font-size: @cmt-username-font-size;
+      line-height: 1.1;
+      a {
+        color: @cmt-username-color;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &.mws-top {
+        color: #467bed;
+        a {
+          color: #467bed;
+        }
+      }
+    }
+    .mws-time {
+      font-size: 12px;
+      color: #999;
+    }
+    .mws-cmt-content {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    .mws-cmt-menu {
+      float: right;
+      display: inline-block;
+      list-style: none;
+      > li {
+        display: inline-block;
+        padding-left: 19px;
+
+        &.is-child {
+          display: none;
+        }
+      }
+      .mws-btn-star {
+        color: #999;
+        //&:hover {
+        //  color: #e94b34;
+        //}
+        .icon-shuo-love {
+          display: none;
+        }
+        &.mws-cmt-starred {
+          color: #e94b34;
+          .icon-shuo-love {
+            display: inline-block;
+          }
+          .icon-shuo-love-empty {
+            display: none;
+          }
+        }
+      }
+      .icon-shuo-reply {
+        font-size: 15px;
+      }
+    }
+    .mws-cmt-footer {
+      .clearfix();
+      font-size: @cmt-footer-font-size;
+      color: @cmt-footer-color;
+      a {
+        color: @cmt-footer-color;
+      }
+    }
+  }
+
+  .mws-cmt-firstload {
+    .mws-cmt-item:nth-child(n+6) {
+      display: none;
+    }
+  }
+
+  .mws-cmt-replies {
+    .mws-cmt-item {
+      border-top: 1px dashed @cmt-border;
+      margin-bottom: @cmt-padding-top;
+      &:first-child {
+        margin-top: @cmt-padding-top;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+    .mws-cmt-main {
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .mws-btn-moreReply {
+    margin: 0 auto 8px;
+    display: block;
+    width: 60px;
+    text-align: center;
+    font-size: 14px;
+    color: #4a90e2;
+  }
+
+  .mws-hidden {
+    display: none;
+  }
+}

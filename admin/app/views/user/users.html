@@ -1,0 +1,63 @@
+<!--
+  Copyright (c) 2015 Meizu bigertech, All rights reserved.
+  @author 苏理煌
+  @date  09/12/15
+  @description
+-->
+
+<section class="content-header clearfix">
+  <h3> 全部用户 </h3>
+</section>
+
+<section class="content">
+
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" id="username" ng-model="query.username" ng-change="search()"
+             placeholder="用户昵称">
+      <select class="form-control" ng-model="query.status" ng-change="search()">
+        <option value="">请选择用户状态</option>
+        <option value=0>冻结</option>
+        <option value=1>正常</option>
+      </select>
+    </div>
+  </form>
+  <div class="table-respon">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th style="min-width: 50px">操作</th>
+        <th style="min-width:45px">序号</th>
+        <th style="min-width:75px">用户头像</th>
+        <td style="min-width:120px">用户名</td>
+        <td style="min-width: 80px">个人主页</td>
+        <th style="min-width: 80px">来源站点</th>
+        <th style="min-width:50px">状态</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="user in users">
+        <td>
+          <div>
+            <button class="btn btn-danger" ng-click="operation($index, user)" ng-if="user.status == 1">冻结</button>
+            <button class="btn btn-success" ng-click="operation($index, user)" ng-if="user.status == 0">启用</button>
+          </div>
+
+        </td>
+        <td>{{$index+1}}</td>
+        <td><img class="avatar" ng-src="{{user.avatar}}"></td>
+        <td>{{user.username}}</td>
+        <td>{{user.homepage}}</td>
+        <td>{{user.site.sitename}}</td>
+        <td>
+          <span ng-if="user.status == 0">冻结</span>
+          <span ng-if="user.status == 1">正常</span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" items-per-page="items_per_page"
+              boundary-links="true" rotate="false" ng-change="pageChanged()" class="pull-right"></pagination>
+</section>

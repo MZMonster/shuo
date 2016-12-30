@@ -1,0 +1,85 @@
+<section class="content-header clearfix">
+  <h3> {{comments[0].thread.title}}的评论 </h3>
+</section>
+
+<section class="content">
+
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" id="content" ng-model="query.content" ng-change="search()"
+             placeholder="评论内容">
+      <select class="form-control" ng-model="query.status" ng-change="search()">
+        <option value="">请选择评论状态</option>
+        <option value=0>删除</option>
+        <option value=1>待审核</option>
+        <option value=2>正常</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" ng-model="isPraiseDesc">按赞排序
+      <input type="checkbox" ng-model="isReplyCountDesc">按子评论数排序
+    </div>
+    <div class="form-group">
+      <button class="btn btn-default" ng-click="search()">搜索</button>
+    </div>
+
+  </form>
+  <div class="table-respon">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th style="min-width: 50px">删除</th>
+        <th style="min-width: 50px">审核</th>
+        <th style="min-width: 50px">置顶</th>
+        <th style="min-width:45px">序号</th>
+        <th style="min-width:75px">评论内容</th>
+        <th style="min-width:75px">回复数</th>
+        <th style="min-width:75px">点赞数</th>
+        <td style="min-width:120px">文章标题</td>
+        <td style="min-width:120px">用户名</td>
+        <td style="min-width: 80px">回复评论</td>
+        <th style="min-width: 80px">来源站点</th>
+        <th style="min-width:50px">状态</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="comment in comments">
+        <td>
+          <div>
+            <button class="btn btn-danger" ng-click="operation($index, comment, 'status')" ng-if="comment.status == 2">删除</button>
+            <button class="btn btn-success" ng-click="operation($index, comment, 'status')" ng-if="comment.status == 0">启用</button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <button class="btn btn-danger" ng-click="operation($index, comment, 'status', 'audit')" ng-if="comment.status == 2">不通过</button>
+            <button class="btn btn-success" ng-click="operation($index, comment, 'status', 'audit')" ng-if="comment.status == 1">通过</button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <button class="btn btn-danger" ng-click="operation($index, comment, 'isTop')" ng-if="comment.isTop == 1">取消置顶</button>
+            <button class="btn btn-success" ng-click="operation($index, comment, 'isTop')" ng-if="comment.isTop == 0">置顶</button>
+          </div>
+        </td>
+        <td>{{$index+1}}</td>
+        <td ng-bind-html="comment.content | trustHtml"></td>
+        <td>{{comment.replyCount}}</td>
+        <td>{{comment.star}}</td>
+        <td>{{comment.thread.title}}</td>
+        <td>{{comment.user.username}}</td>
+        <td>{{comment.parentID}}</td>
+        <td>{{comment.site.sitename}}</td>
+        <td>
+          <span ng-if="comment.status == 0">删除</span>
+          <span ng-if="comment.status == 1">审核中</span>
+          <span ng-if="comment.status == 2">正常</span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" items-per-page="items_per_page"
+              boundary-links="true" rotate="false" ng-change="pageChanged()" class="pull-right"></pagination>
+</section>

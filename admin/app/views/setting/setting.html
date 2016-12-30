@@ -1,0 +1,62 @@
+<!--
+  Copyright (c) 2015 Meizu bigertech, All rights reserved.
+  @author 苏理煌
+  @date  09/12/15
+  @description
+-->
+
+<section class="content-header clearfix">
+  <h3> 站点信息配置 </h3>
+</section>
+
+<section class="content">
+  <h2>站点信息</h2>
+  <div class="form-group">
+    <label>站点名称:</label>
+    <label>{{site.sitename}}</label>
+  </div>
+  <div class="form-group">
+    <label>站点链接:</label>
+    <label>{{site.url}}</label>
+  </div>
+  <div class="form-group">
+    <label>appid:</label>
+    <label>{{site.appid}}</label>
+  </div>
+  <div class="form-group">
+    <label>appkey:</label>
+    <label>{{site.appkey}}</label>
+  </div>
+  <h2>站点配置</h2>
+  <div class="form-group">
+    <label>审核规则</label>
+    <select class="form-control" ng-model="siteConfig.comment_default_status" style="width:160px;display: inline-block">
+      <option value=1> 先审后发</option>
+      <option value=2> 先发后审</option>
+    </select>
+    <div class="form-group">
+      <label for="comment_pushback_url">回推地址</label>
+      <input type="text" ng-model="siteConfig.comment_pushback_url" class="form-control" id="comment_pushback_url">
+    </div>
+    <div class="form-group">
+      <label for="domain_whitelist">白名单域名</label>
+      <input type="text" ng-model="siteConfig.domain_whitelist" class="form-control" id="domain_whitelist" placeholder="多个域名用逗号隔开">
+    </div>
+
+    <div class="form-group">
+      <label>默认头像</label>
+      <label for="user_default_avatar">默认头像</label>
+      <input type="text" ng-model="siteConfig.user_default_avatar" class="form-control" id="user_default_avatar">
+      <p class="warning">尺寸: 160 * 160</p>
+      <img ng-show="siteConfig.user_default_avatar" ng-src="{{siteConfig.user_default_avatar}}" style="height: 140px">
+
+      <div ng-show="imageUpload.isHTML5" ng-thumb="{ file: imageUpload.queue[0]._file, height: 100 }"></div>
+    </div>
+
+    <div class="operation">
+      <button class="btn btn-success" ng-click="save()">保存</button>
+    </div>
+  </div>
+
+
+</section>

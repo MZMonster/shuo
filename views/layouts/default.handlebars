@@ -1,0 +1,26 @@
+<div id="SHUO_MAIN" class="mws-main">
+
+  <div id="SHUO_threadID" style="display: none">{{threadID}}</div>
+
+  <div class="mws-header">
+    <h4>
+      <strong id="SHUO_title">评论</strong>
+      <span>(<span class="mws-cmt-count">{{cmtCount}}</span>条评论)</span>
+    </h4>
+
+    <ul class="mws-sort-list">
+      <li><a href="javascript:void(0)" data-sortBy="hot" class="mws-btn-sort mws-btn-sort-active">最热</a></li>
+      <li><a href="javascript:void(0)" data-sortBy="new" class="mws-btn-sort">最新</a></li>
+      <li><a href="javascript:void(0)" data-sortBy="old" class="mws-btn-sort">最旧</a></li>
+    </ul>
+  </div>
+
+  <div class="mws-cmt-form-wrapper">
+    {{> form}}
+  </div>
+  <div class="shuo-cmt-count">评论 <span class="count">{{partsCount}}</span></div>
+  <div id="SHUO_LIST" class="mws-cmt-list">
+    {{> comment-list }}
+  </div>
+
+</div>

@@ -1,0 +1,130 @@
+//Contains All variables
+//-----------------------
+
+//Layout
+//Side bar and logo width
+@left-side-width: 220px;
+
+//Colors
+@light-blue: #3c8dbc; //Primary
+@red: #dd4b39;        //Danger
+@green: #00a65a;      //Success
+@aqua: #00c0ef;       //Info
+@yellow: #f39c12;     //Warning
+@blue: #0073b7;
+@navy:  #001F3F;
+@teal:  #39CCCC;
+@olive: #3D9970;
+@lime:  #01FF70;
+@orange:  #FF851B;
+@fuchsia: #F012BE;
+@purple:  #932ab6;
+@maroon:  #85144B;
+@black: #222;
+@gray: #eaeaec;
+
+//Link colors (Aka: <a> tags)
+@link-color: @light-blue;
+@link-hover-color: lighten(@link-color, 15%);
+
+//Body background (Affects main content background only)
+@body-bg: #f9f9f9;
+
+//Table striped color
+@table-striped-color: #f3f4f5;
+
+//Sidebar skins
+//skin blue (light) sidebar vars
+@sidebar-light-hover-bg: #f9f9f9;
+@sidebar-light-font: #555;
+@sidebar-light-border: #dbdbdb;
+
+//Screen widths - Same as bootstrap default settings
+@screen-xs: 480px;
+@screen-sm: 767px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+//When the logo should go to the top of the screen
+@screen-header-collapse: 560px; 
+
+//BOXES
+@box-border-color: #f4f4f4;
+@box-border-radius: 3px;
+@box-footer-bg: #fff;
+
+//FORMS
+@input-radius: 0px;
+
+//BUTTONS
+//Border radius for non flat buttons
+@btn-border-radius: 3px;
+
+//CHAT widget
+@attachment-border-radius: 3px;
+
+@sidebar-width: 230px;
+
+//Dark sidebar
+@sidebar-dark-bg:                  #222d32;
+@sidebar-dark-hover-bg:            darken(@sidebar-dark-bg, 2%);
+@sidebar-dark-color:               lighten(@sidebar-dark-bg, 60%);
+@sidebar-dark-hover-color:         #fff;
+@sidebar-dark-submenu-bg:          lighten(@sidebar-dark-bg, 5%);
+@sidebar-dark-submenu-color:       lighten(@sidebar-dark-submenu-bg, 40%);
+@sidebar-dark-submenu-hover-color: #fff;
+
+//Light sidebar
+@sidebar-light-bg:                  #f9fafc;
+@sidebar-light-hover-bg:            lighten(#f0f0f1, 1.5%);
+@sidebar-light-color:               #444;
+@sidebar-light-hover-color:         #000;
+@sidebar-light-submenu-bg:          @sidebar-light-hover-bg;
+@sidebar-light-submenu-color:       #777;
+@sidebar-light-submenu-hover-color: #000;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `@screen-xs` as of v3.0.1
+@screen-xs:                  480px;
+//** Deprecated `@screen-xs-min` as of v3.2.0
+@screen-xs-min:              @screen-xs;
+//** Deprecated `@screen-phone` as of v3.0.1
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `@screen-md` as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+//** Deprecated `@screen-desktop` as of v3.0.1
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+
+//TRANSITIONS SETTINGS
+//--------------------------------------------------------
+
+//Transition global options
+@transition-speed: .3s;
+@transition-fn:    ease-in-out;//cubic-bezier(0.32,1.25,0.375,1.15);

@@ -1,0 +1,47 @@
+<!--
+  Copyright (c) 2015 Meizu bigertech, All rights reserved.
+  @author 苏理煌
+  @date  09/12/15
+  @description
+-->
+
+<section class="content-header clearfix">
+  <h3> 站点列表 </h3>
+</section>
+
+<section class="content">
+
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" id="username" ng-model="query.username" ng-change="search()"
+             placeholder="用户昵称">
+    </div>
+  </form>
+  <div class="table-respon">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th style="min-width:45px">序号</th>
+        <td style="min-width:120px">站点名称</td>
+        <td style="min-width:120px">站点链接</td>
+        <td style="min-width:120px">appid</td>
+        <td style="min-width:120px">appkey</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="site in sites">
+        <td>{{$index+1}}</td>
+        <td>{{site.sitename}}</td>
+        <td>{{site.url}}</td>
+        <td>{{site.appid}}</td>
+        <td>{{site.appkey}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <a href="#/site/new" class="btn btn-success btn-sm">新增站点</a>
+  </div>
+  <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" items-per-page="items_per_page"
+              boundary-links="true" rotate="false" ng-change="pageChanged()" class="pull-right"></pagination>
+</section>

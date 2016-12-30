@@ -1,0 +1,53 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+.button-variant(@color; @background; @border;
+  @color-active: darken(@color, 10%);@background-active: darken(@background, 10%); @border-active: darken(@border, 10%)) {
+
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:active {
+    color: @color-active;
+    background-color: @background-active;
+    border-color: @border-active;
+  }
+  &:active {
+    background-image: none;
+  }
+}
+
+// Button sizes
+.button-size(@width; @height; @font-size; @border-radius:0) {
+  width: @width;
+  height: @height;
+  border-radius: @border-radius;
+  font-size: @font-size;
+  line-height: @height;
+  text-align: center;
+}
+
+.button-size-padding(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+// a 标签按钮
+.button-size-link(@width; @height; @font-size; @border-radius:0) {
+  width: @width;
+  height: @height;
+  border-radius: @border-radius;
+  font-size: @font-size;
+  line-height: @height;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}

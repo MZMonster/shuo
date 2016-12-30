@@ -1,0 +1,90 @@
+/* 
+   All form elements including input, select, textarea etc.
+-----------------------------------------------------------------
+*/
+
+
+&.form-control {
+
+    .border-radius(@input-radius)!important;
+    box-shadow: none;
+
+    &:focus {
+        border-color: @light-blue !important; 
+        box-shadow: none;
+    }               
+
+}
+
+.form-group {
+    //&.has-success {
+    //    label {
+    //        color: @green;
+    //    }
+    //    .form-control {
+    //        border-color: @green !important;
+    //        box-shadow: none;
+    //    }
+    //}
+    //
+    //&.has-warning {
+    //    label {
+    //        color: @yellow;
+    //    }
+    //    .form-control {
+    //        border-color: @yellow !important;
+    //        box-shadow: none;
+    //    }
+    //}
+    //
+    //&.has-error {
+    //    label {
+    //        color: @red;
+    //    }
+    //    .form-control {
+    //        border-color: @red !important;
+    //        box-shadow: none;
+    //    }
+    //}
+}
+
+/* Input group */
+.input-group {
+    > .input-group-btn > .btn {
+
+    }
+    .input-group-addon {
+        border-radius: 0;
+        background-color: #f4f4f4;
+    }
+}
+/* button groups */
+.btn-group-vertical {
+    .btn {
+        &.btn-flat:first-of-type, &.btn-flat:last-of-type {
+            border-radius: 0;
+        }
+    }
+}
+
+/* Checkbox and radio inputs */
+.checkbox, .radio {
+    padding-left: 0;
+}
+
+.input-group.yuan {
+    .input-group-addon {
+        padding: 0;
+        background: #fff;
+    }
+    .input-group-addon.selected {
+        border: 1px solid @light-blue;
+    }
+    a {
+        display: inline-block;
+        width: 37px;
+        height: 32px;
+        line-height: 32px;
+        color: #333;
+    }
+}

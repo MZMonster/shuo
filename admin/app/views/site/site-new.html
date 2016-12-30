@@ -1,0 +1,26 @@
+<!--
+  Copyright (c) 2015 Meizu bigertech, All rights reserved.
+  @author 苏理煌
+  @date  09/12/15
+  @description
+-->
+
+<section class="content-header clearfix">
+  <h3> 新增站点 </h3>
+</section>
+
+<div class="form-group">
+  <div class="form-group">
+    <label for="sitename">站点名称</label>
+    <input type="text" ng-model="newSite.sitename" class="form-control" id="sitename">
+  </div>
+  <div class="form-group">
+    <label for="url">链接</label>
+    <input type="text" ng-model="newSite.url" class="form-control" id="url">
+  </div>
+
+
+  <div class="operation">
+    <button class="btn btn-success" ng-click="create()">创建站点</button>
+  </div>
+</div>

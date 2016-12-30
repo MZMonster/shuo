@@ -1,0 +1,65 @@
+<div class="mws-cmt-item" id="{{uuid}}">
+  {{> avatar}}
+  <div class="mws-cmt-main mws-cmt-right {{#unless parentID}}mws-cmt-root mws-cmt-firstload{{/unless}}">
+    <p class="mws-cmt-username {{#if isTop}}mws-top{{/if}}" >
+      {{#if isTop}}置顶: {{/if}}<a href="{{user.homepage}}">{{user.username}}</a>
+      {{!---
+      {{#if replyTo}}
+        {{#replyTo}}
+          回复 <a href="{{homepage}}">{{username}}</a>
+        {{/replyTo}}
+      {{/if}}
+      --}}
+    </p>
+    <span class="mws-time">{{date createdAt timeago="ture"}}</span>
+
+    <div class="mws-cmt-content">
+      {{{content}}}
+    </div>
+
+    <div class="mws-cmt-footer">
+      <ul class="mws-cmt-menu">
+        {{#ifConf currentUser '==' user.id}}
+          <li><a href="javascript:void(0)" class="mws-btn-delete">删除</a></li>
+        {{/ifConf}}
+          <li class="{{#if parentID}}is-child{{/if}}">
+            <a href="javascript:void(0)" class="mws-btn-star {{#if hasStarred}}mws-cmt-starred{{/if}}">
+              <i class="icon-shuo-love"></i>
+              <i class="icon-shuo-love-empty"></i>
+              <!--<span class="mws-cmt-menu-text">喜欢</span>-->
+              <span class="mws-cmt-star">{{star}}</span>
+            </a>
+          </li>
+        <li>
+          <a href="javascript:void(0)" data-to="{{user.uuid}}" data-parentid="{{uuid}}" data-to-username="{{user.username}}" data-click="false"
+             class="mws-btn-reply">
+            <i class="icon-shuo-reply mws-hide mws-resp-show-inline"></i>
+            <span class="mws-cmt-menu-text">回复</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <span class="mws-item-message"></span>
+
+    <div class="mws-cmt-item-form mws-hidden"></div>
+
+    <div class="mws-cmt-replies">
+      {{#each children}}
+        {{> comment-item currentUser=../currentUser}}
+      {{/each}}
+    </div>
+
+    {{#if children}}
+      {{#ifConf children.length '>' 5}}
+        <div class="mws-cmt-more">
+          <a href="javascript:void(0)" class="mws-btn-moreReply"
+             data-count="{{replyCount}}" data-page="1">
+            查看更多
+          </a>
+        </div>
+      {{/ifConf}}
+    {{/if}}
+
+  </div>
+</div>

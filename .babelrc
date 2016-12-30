@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "es2015",
+    "stage-0"
+  ],
+  "plugins": [
+    "syntax-export-extensions",
+    "transform-export-extensions",
+    "add-module-exports",
+    [
+      "babel-plugin-transform-builtin-extend",
+      {
+        "globals": [
+          "Error",
+          "Array"
+        ]
+      }
+    ]
+  ],
+  "ignore": []
+}

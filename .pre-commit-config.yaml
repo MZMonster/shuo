@@ -1,0 +1,13 @@
+-   repo: git://github.com/pre-commit/mirrors-jshint
+    sha: 'v2.8.0'  # Use the sha you want to point at
+    hooks:
+    -   id: jshint
+        name: jshint
+        entry: jshint
+        language: node
+        files: \.js$
+        args: []
+
+        # Use additional_dependencies to install the actual node package
+        additional_dependencies: ['jshint@2.8.0']
+        minimum_pre_commit_version: 0.7.0

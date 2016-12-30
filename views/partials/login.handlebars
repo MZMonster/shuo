@@ -1,0 +1,198 @@
+<style>
+  body {
+    margin: 0px;
+    padding: 0;
+    height: 100%;
+    background: url("https://dn-coding-net-production-static.qbox.me/f821122b-3926-4780-825f-70fb947e3220.jpg") 50% 50% / cover no-repeat fixed;
+  }
+  .form-login {
+    width: 380px;
+    height: 260px;
+    margin-top: -150px;
+    padding: 50px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.6);
+    position: absolute;
+    left: 50%;
+    margin-left: -240px;
+    top: 50%;
+  }
+
+  .login .field {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .login .field input[type=text],
+  .login .field input[type=password]{
+    width: 100%;
+    padding: 12px 1.2em 12px 3.5em;
+    margin: 0;
+    font-size: 18px;
+    border: 1px solid rgba(0,0,0,.15);
+    background-color: rgba(255,255,255,.5);
+    outline: 0;
+    color: rgba(0,0,0,.7);
+    border-radius: .3125em;
+    -webkit-transition: background-color .3s ease-out,-webkit-box-shadow .2s ease,border-color .2s ease;
+    -moz-transition: background-color .3s ease-out,box-shadow .2s ease,border-color .2s ease;
+    transition: background-color .3s ease-out,box-shadow .2s ease,border-color .2s ease;
+    -webkit-box-shadow: 0 0 rgba(0,0,0,.3) inset;
+    box-shadow: 0 0 rgba(0,0,0,.3) inset;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .login .field input[type=text]:focus,
+  .login .field input[type=password]:focus {
+    color: rgba(0,0,0,.85);
+    border-color: rgba(0,0,0,.2);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -webkit-appearance: none;
+    -webkit-box-shadow: .3em 0 0 0 rgba(0,0,0,.2) inset;
+    box-shadow: .3em 0 0 0 rgba(0,0,0,.2) inset;
+  }
+
+  .login .field .input-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 26px;
+    padding: 9px 10px 0 12px;
+    color: rgba(0,0,0,.3);
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    transition: all ease .2s;
+  }
+
+  .login .field input[type=text]:focus~.input-icon,
+  .login .field input[type=password]:focus~.input-icon {
+    color: rgba(0,0,0,.85);
+  }
+
+  .login .login-btn {
+    font-size: 24px;
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    color: #FFF;
+    background-color: #32be77;
+    display: block;
+    width: 100%;
+    border-radius: 48px;
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: .5;
+
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    transition: all ease .2s;
+  }
+
+  .login .login-btn:hover {
+    opacity: 1;
+  }
+
+  .login .remember {
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    cursor: pointer;
+    color: rgba(0,0,0,.7);
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    transition: all ease .2s;
+  }
+
+  .login .remember:hover {
+    color: rgba(0,0,0,.85);
+  }
+
+  .login .remember i {
+    vertical-align: middle;
+    margin-right: 15px;
+    font-size: 20px;;
+  }
+
+  .login input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    outline: 0;
+  }
+
+  .login input[type=checkbox]:checked + .remember .icon-checkbox-checked {
+    display: inline-block;
+  }
+
+  .login input[type=checkbox]:checked + .remember .icon-checkbox-unchecked {
+    display: none;
+  }
+
+  .login .icon-checkbox-checked {
+    display: none;
+  }
+
+  @font-face {
+    font-family: 'icomoon';
+    src:url('styles/fonts/icomoon.eot?u91gwy');
+    src:url('styles/fonts/icomoon.eot?u91gwy#iefix') format('embedded-opentype'),
+    url('styles/fonts/icomoon.ttf?u91gwy') format('truetype'),
+    url('styles/fonts/icomoon.woff?u91gwy') format('woff'),
+    url('styles/fonts/icomoon.svg?u91gwy#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-envelop:before {
+    content: "\e900";
+  }
+  .icon-unlocked:before {
+    content: "\e901";
+  }
+  .icon-checkbox-checked:before {
+    content: "\e902";
+  }
+  .icon-checkbox-unchecked:before {
+    content: "\e903";
+  }
+</style>
+
+<section class="form-login">
+  <form method="POST" action="/admin/login" class="login" >
+    <span class="user-name field"><input type="text" name="username" placeholder="用户名"/><i class="icon-envelop input-icon"></i></span>
+    <span class="user-password field"><input type="password" name="password" placeholder="密码"/><i class="icon-unlocked input-icon"></i></span>
+    <span class="checkbox-remember field"><input type="checkbox" id="remember-me"/><label for="remember-me" class="remember"><i class="icon-checkbox-checked"></i><i class="icon-checkbox-unchecked"></i>记住我</label></span>
+    <input type="submit" class="login-btn" value="登陆">
+</form>
+</section>

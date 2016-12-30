@@ -1,0 +1,5 @@
+{{#if user.avatar}}
+  <a href="{{user.homepage}}" class="mws-avatar-wrap" title="{{user.username}}"><img src="{{user.avatar}}" class="mws-avatar" id="{{user.uuid}}"></a>
+{{else}}
+  <a href="{{user.homepage}}" class="mws-avatar-wrap" title="{{user.username}}"><img src="{{defaultAvatar}}" class="mws-avatar"></a>
+{{/if}}

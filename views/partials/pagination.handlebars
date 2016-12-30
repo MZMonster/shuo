@@ -1,0 +1,19 @@
+<ul class="mws-pagination" {{#ifCond pagination.pageCount '==' 0}} style="display: none"{{/ifCond}}>
+    {{#paginate pagination type="previous"}}
+      <li class="{{#if disabled}}mws-page-disabled {{/if}}mws-page-prev" data-page="{{n}}">
+        <span>&lt;</span>
+      </li>
+    {{/paginate}}
+
+    {{#paginate pagination type="middle" limit="7"}}
+      <li {{#if active}}class="mws-page-active"{{/if}} data-page="{{n}}">
+        <span>{{n}}</span>
+      </li>
+    {{/paginate}}
+
+    {{#paginate pagination type="next"}}
+      <li class="{{#if disabled}}mws-page-disabled {{/if}}mws-page-next" data-page="{{n}}">
+        <span>&gt;</span>
+      </li>
+    {{/paginate}}
+</ul>

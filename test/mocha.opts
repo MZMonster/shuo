@@ -1,0 +1,4 @@
+--require should
+--require should-promised
+--colors
+--timeout 15000

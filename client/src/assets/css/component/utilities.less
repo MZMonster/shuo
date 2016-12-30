@@ -1,0 +1,25 @@
+
+.mws-right {
+  float: right;
+}
+.mws-left {
+  float: left;
+}
+.mws-hide {
+  display: none;
+}
+.mws-show {
+  display: block;
+}
+
+@media screen and (max-width: @break-point-width) {
+  .mws-resp-show {
+    .responsive-visibility();
+  }
+  .mws-resp-show-inline {
+    display: inline-block;
+  }
+  .mws-resp-hide {
+    .responsive-invisibility();
+  }
+}

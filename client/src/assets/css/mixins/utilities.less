@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Mixins: Utilities
+ ============================================================================ */
+
+
+.border-round(@size) {
+  width: @size;
+  height: @size;
+  border-radius: 50%;
+}
+
+.text-overflow(@display: block) {
+  display: @display;
+  word-wrap: normal; /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.line-clamp(@lines, @line-height: 1.3em) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @lines; // number of lines to show
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: @line-height;
+  max-height: @line-height * @lines;
+}
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+.embed-responsive(@ratio: 56.25%) {
+  position: relative;
+  display: block;
+  height: 0;
+  padding-bottom: @ratio;
+  overflow: hidden;
+
+  & iframe,
+  & embed,
+  & object,
+  & video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+  }
+}
+
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+}
+
+.responsive-visibility() {
+  display: block !important;
+  table&  { display: table; }
+  tr&     { display: table-row !important; }
+  th&,
+  td&     { display: table-cell !important; }
+}
+
+.responsive-invisibility() {
+  display: none !important;
+}
+
+.img-center() {
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+  margin: auto;
+  width: 100%;
+  min-height: 100%;
+}
+
+.font(@font-size,@color) {
+  font-size: @font-size;
+  color: @color;
+  line-height: 1;
+}

@@ -1,0 +1,53 @@
+{
+  "name": "shuo-demo",
+  "description": "The best project ever..",
+  "version": "2.0.0",
+  "homepage": "https://github.com/wuyanxin/shuo-demo",
+  "author": {
+    "name": "wuyanxin",
+    "url": "http://github.com/wuyanxin/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wuyanxin/shuo-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wuyanxin/shuo-demo/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "grunt assemble",
+    "start": "grunt server"
+  },
+  "devDependencies": {
+    "assemble": "^0.4.42",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-less": "0.11.1",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-restful-mock": "^0.1.21",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^1.0.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/wuyanxin/shuo-demo/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "assemble",
+    "templates",
+    "handlebars",
+    "site generator",
+    "site builder",
+    "grunt"
+  ]
+}

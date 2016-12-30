@@ -1,0 +1,21 @@
+<div class="mws-cmt-form" {{#unless uuid}}id="mainForm"{{/unless}}>
+  <div class="mws-form-controls">
+    <textarea class="mws-editable mws-form-content" data-parentID="{{uuid}}" data-emojiable=true rows="1"></textarea>
+    <div class="btn-wrapper">
+      <button class="star mws-main-star {{#if this.hasStarred}}mws-cmt-starred{{/if}}"><i class="icon-shuo-love"></i><i class="icon-shuo-love-empty"></i><span class="count mws-cmt-star">{{star}}</span></button>
+      <button class="mws-form-submit mws-btn-submit-mobile mws-right" disabled="true" href="javascript:void(0)"
+              title="提交评论"><i class="icon-shuo-send"></i></button>
+    </div>
+
+  </div>
+  <div class="mws-form-footer">
+    <a href="javascript:void(0)" class="mws-file mws-resp-hide">
+      <i class="icon-shuo-file"></i>
+      <input class='mws-input-uploadImg' type="file">
+    </a>
+    <!--<a href="javascript:void(0)" class="mws-emojis mws-resp-hide"><i class="icon-shuo-smile"></i></a>-->
+    <button class="mws-form-submit mws-btn-submit mws-right">发言</button>
+    <span class="mws-support-text mws-right mws-resp-hide">支持 markdown</span>
+  </div>
+  <span class="mws-form-message"></span>
+</div>

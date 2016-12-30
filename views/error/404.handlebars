@@ -1,0 +1,17 @@
+<div class="error-wrap">
+  <div class="error">
+    <img class="error-img" src="/images/404.png" alt="404">
+
+    <p class="error-type">404</p>
+
+      {{#if message}}
+        <p class="error-desc">{{message}}</p>
+      {{else}}
+        <p class="error-desc">呃...这个页面被我们玩丢了,检查网址是否正确?</p>
+      {{/if}}
+
+    <a class="error-button" href="//wan.meizu.com">
+      <span class="error-return">返回主页</span>
+    </a>
+  </div>
+</div>
