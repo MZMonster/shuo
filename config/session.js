@@ -28,7 +28,6 @@ module.exports.session = {
   name: 'shuo.sid',
   cookie: {
     maxAge: 14 * 24 * 60 * 60 * 1000,
-    domain: 'a.com'
   },
   saveUninitialized: false,
   adapter: 'redis',

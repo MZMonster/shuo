@@ -53,6 +53,7 @@
     "should": "^7.1.1",
     "should-promised": "^0.3.1",
     "skipper-upyun": "^0.1.0",
+    "upyun": "^2.0.4",
     "uuid": "^2.0.1",
     "winston": "^2.1.1",
     "xss": "^0.2.13"
