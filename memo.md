@@ -77,7 +77,7 @@ module.exports.views = {
 ```
 
 ## 最终解决办法
-参考 npm v3 的[模块机制](https://docs.npmjs.com/how-npm-works/npm3)，发现 package.json 中手动引入新版本的 `handlebars` 是一个愚蠢的行为。        
+参考 npm v3 的[模块机制](https://docs.npmjs.com/how-npm-works/npm3)，发现 package.json 中手动引入新版本的 `handlebars` ([源码](https://github.com/MZMonster/shuo/blob/f8c2d18de0186157508bc24b2d9df1a5b6cc499c/package.json#L39)) 是一个愚蠢的行为。     
 避免`package.json` 中引入更高版本的 `handlebars`。    
 可以保证业务代码 `require('handlebars')` 的时候和sails内部 `require('handlebars')` 是引用的同一个依赖。    
 
