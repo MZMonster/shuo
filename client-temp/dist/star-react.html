@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>点赞DEMO | Shuo_demo</title>
+  </head>
+  <body>
+
+    
+
+<style>
+  .content {
+    margin-right: 15px;
+  }
+
+  .btn-star {
+    background-color: green;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 10px;
+  }
+
+  .MW-star-hasStarred .btn-star {
+    background-color: gray;
+  }
+</style>
+
+<ul>
+  <li>
+    <div class="MW-star MW-star-init" data-id="371414de-e2af-4f57-a9eb-848ceaea5605"
+         data-user-id="97cd5969-c336-4d0a-98be-592e802aa43d">
+      <span class="content">葫芦兄弟</span>
+      <span class="MW-star-num"> 0 </span> 个人点赞
+      <button class="btn-star">点赞</button>
+      <button class="btn-getUsers">获取点赞用户</button>
+    </div>
+  </li>
+  <li>
+    <div class="MW-star MW-star-init" data-id="631beded-8092-48bd-a928-286e63150932"
+         data-user-id="79c0acf9-803e-44d1-b751-7d0fe4a137c3">
+      <span class="content">喜洋洋与灰太狼</span>
+      <span class="MW-star-num"> 0 </span> 个人点赞
+      <button class="btn-star">点赞</button>
+      <button class="btn-getUsers">获取点赞用户</button>
+    </div>
+  </li>
+  <li>
+    <div class="MW-star MW-star-init" data-shuo-star="true" data-id="640e9478-7e1c-4fd6-a034-920613dfa2dd"
+         data-user-id="c8418c10-0e45-4454-9020-269839ae2485">
+      <span class="content">熊出没</span>
+      <span class="MW-star-num"> 0 </span> 个人点赞
+      <button class="btn-star">点赞</button>
+      <button class="btn-getUsers">获取点赞用户</button>
+    </div>
+  </li>
+  <li>
+    <div class="MW-star MW-star-init" data-shuo-star="true" data-id="fdcd4bc5-ecbe-47fa-97cb-4c50018073fa"
+         data-user-id="a1a6d96e-ca79-439d-beac-e67efc79b4f1">
+      <span class="content">猫和老鼠</span>
+      <p class="MW-star-num"> 0 </p> 个人点赞
+      <button class="btn-star">点赞</button>
+      <button class="btn-getUsers">获取点赞用户</button>
+    </div>
+  </li>
+</ul>
+
+
+<script src="assets/js/shuo.star.js"> </script>
+
+<script>
+  var $ = shuoQuery;
+  $(document).ready(function () {
+    window.shuo.starApi.config({
+      appid: 'HJQV-A1S',
+      numSelector: 'p',
+      sourceID: 'cec56907-cb2f-44e9-9f86-ad266abcab70',
+      title: '点赞排行榜',
+      user_info_url: 'http://127.0.0.1:9001/userInfo4Star',  // 用户信息接口
+      user_login_url: 'http://127.0.0.1:9001/login?return_to='  // 用户登录链接
+    }, function () {
+      shuo.starApi.load();  // 加载点赞数据
+    });
+
+    $('.MW-star').on('click', '.btn-star', function (e) {
+      var btn = $(e.target);
+      var uuid = btn.parent().attr('data-id');
+      var targetUser = btn.parent().attr('data-user-id') || '';
+      var content = btn.siblings('.content').text();
+      var param = {
+        uuid: uuid,
+        content: content,
+        targetUser: targetUser
+      };
+      shuo.starApi.star(param, function (err, result) {
+        if (err) {
+          return console.error(err);
+        }
+        btn.siblings('.MW-star-num').text(result.star);
+        btn.parent().toggleClass('MW-star-hasStarred');
+      });
+    });
+
+    $('.MW-star').on('click', '.btn-getUsers', function (e) {
+      var btn = $(e.target);
+      var targetID = btn.parent().attr('data-id');
+
+      shuo.starApi.getStarredUsers({targetID: targetID}, function (err, result) {
+        if (err) {
+          return console.error(err);
+        }
+        alert(JSON.stringify(result));
+      });
+    });
+  });
+</script>
+
+  </body>
+</html>

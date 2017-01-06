@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>详情页 | Shuo_demo</title>
+  </head>
+  <body>
+
+    
+
+<div id="MW_SHUO">
+
+</div>
+
+
+<script src="assets/js/shuo.api.js"> </script>
+
+<script>
+  window.shuo.api.config({
+    target: 'MW_SHUO', // 可选,默认MW_SHUO
+    appid: 'VkHiN7zHl',
+    sourceID: '9c9971ae-89b3-46a3-ae88-c41093484749',
+    category: 'product',
+//    sourceID: 'c76545f2-e461-4fa9-90d1-a19b6585a490',
+//    category: 'company',
+//    sourceID: '33f8728a-ae01-49c7-b0f5-e561dd5ec853',
+//    category: 'topic',
+//    sourceID: 'e639dfe1-64d8-4bc5-b41e-eea37dbf1158',
+//    category: 'category',
+//    title: ,
+//    url: ,
+//    limit: ,
+//    image: ,
+//    description: ,
+    user_info_url: 'http://127.0.0.1:9001/userInfo',  // 用户信息接口
+    user_login_url: 'http://127.0.0.1:9001/login?return_to=',  // 用户登录链接
+    render: '/assets/js/shuo.render.js',  // 自定义渲染js
+    cmt_title: '短评', // 自定义评论标题,默认为"评论"
+    cmt_placeholder: '来咯,聊聊你对它的见解和看法',  // 自定义评论框的提示语, 默认为空
+    emoji_url: 'assets/img'
+  });
+</script>
+
+
+
+  </body>
+</html>
