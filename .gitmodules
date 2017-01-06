@@ -1,3 +1,6 @@
 [submodule "backstage"]
 	path = backstage
 	url = git@github.com:MZMonster/shuo-backstage.git
+[submodule "client"]
+	path = client
+	url = git@github.com:MZMonster/shuo-client.git
